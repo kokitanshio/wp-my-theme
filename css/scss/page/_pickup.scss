@@ -1,0 +1,16 @@
+.pickup{
+  margin: 40px auto;
+  &-items{
+    display: flex;
+    @include mq(sp){
+      display: none;
+    }
+  }
+  &-sp{
+    display: none;
+    @include mq(sp){
+      display: block;
+      margin: 0 40px;
+    }
+  }
+}

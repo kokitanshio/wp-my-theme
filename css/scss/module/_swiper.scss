@@ -1,0 +1,42 @@
+.swiper-wrapper{
+  .swiper-slide{
+    @include card;
+    &:hover{
+      opacity: 0.6;
+      img{
+        transition: all 0.5s ease 0s;
+        transform: scale(1.1);
+      }
+    }
+    &-img{
+      width: 100%;
+      overflow: hidden;
+      img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        vertical-align: bottom;
+        border-radius: 4px 4px 0 0;
+      }
+    }
+    &-text{
+      padding: 20px 8px;
+      text-align: left;
+    }
+  }
+}
+.swiper-button-next, .swiper-button-prev{
+  background-color: rgba(225,225,225,0.7);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.swiper-pagination{
+  width: 100%;
+  margin-top: 10px;
+  &-bullet{
+    width: 12px;
+    height: 12px;
+    margin: 0 10px;
+  }
+}

@@ -1,0 +1,30 @@
+.wpost-item{
+  display: block;
+  position: relative;
+  margin: 20px 0;
+  @include mq(){
+    margin: 40px 0;
+  }
+  &:hover img{
+    opacity: 0.6;
+    transition: all 0.5s ease 0s;
+  }
+  &:hover .wpost-item-title{
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: all 0.5s ease 0s;
+  }
+  img{
+    width: 100%;
+    height: auto;
+  }
+  &-title{
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: $fontSub;
+    padding: 10px 10px;
+    font-weight: bold;
+  }
+}

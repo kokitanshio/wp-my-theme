@@ -1,0 +1,15 @@
+@mixin sns($color){
+  color: $fontSub;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  @include font(20);
+  background-color: $color;
+  margin: 0 5px;
+  transition: all 0.3s ease 0s;
+  &:hover{
+    opacity: 0.5;
+  }
+}

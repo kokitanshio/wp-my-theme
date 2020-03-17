@@ -1,0 +1,27 @@
+.wprofile{
+  text-align: center;
+  padding: 20px 10px;
+  &-img{
+    margin-bottom: 20px;
+    img{
+      width: 100px;
+      border-radius: 50%;
+    }
+  }
+  &-name{
+    margin-bottom: 20px;
+    @include font(18);
+    font-weight: bold;
+  }
+  &-content{
+    margin-bottom: 20px;
+    color: $fontText;
+  }
+  &-sns{
+    display: flex;
+    justify-content: center;
+  }
+  &-link{
+    @include btn($mainColor, $fontSub);
+  }
+}

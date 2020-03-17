@@ -1,0 +1,46 @@
+.entry-body{
+  padding-bottom: 30px;
+  h2{
+    width: 100%;
+    padding: 20px;
+    background-color: $backColor;
+    border-left: 5px solid $mainColor;
+    margin: 80px 0 40px;
+  }
+  h3{
+    @include font(20);
+    padding: 20px 0;
+    margin: 60px 0 40px;
+    border-bottom: 2px solid $mainColor;
+  }
+  h4{
+    @include font(18);
+    margin-bottom: 20px;
+    padding-left: 22px;
+    position: relative;
+    &::before{
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      content: "";
+      width: 10px;
+      height: 18px;
+      border-bottom: 3px solid $mainColor;
+      border-right: 3px solid $mainColor;
+      transform: rotate(45deg);
+    }
+  }
+  p{
+    margin-bottom: 40px;
+  }
+  ul{
+    background-color: $backColor;
+    padding: 40px;
+    margin: 40px 20px;
+    li{
+      list-style: inherit;
+      margin-bottom: 10px;
+    }
+  }
+}

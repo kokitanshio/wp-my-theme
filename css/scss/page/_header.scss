@@ -1,0 +1,39 @@
+.header{
+  background-color: $mainColor;
+  color: $fontSub;
+  &-inner{
+    display: flex;
+    align-items: baseline;
+    font-weight: 900;
+    padding-top: 30px;
+    @include mq(){
+      flex-direction: column;
+    }
+  }
+  &-logo{
+    @include font(30);
+    background-image: url(../img/IMG_20200217_174330.jpeg);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 20px 0 20px 90px;
+    transition: all 0.5s ease 0s;
+    @include mq(sp){
+      margin: 0 auto;
+      @include font(24)
+    }
+    &:hover{
+      opacity: 0.6;
+    }
+  }
+  &-subtitle{
+    margin: 0 30px;
+    @include mq(){
+      margin: 20px 0 0;
+      @include mq(sp){
+        margin-right: 40px;
+        padding-bottom: 20px;
+      }
+    }
+  }
+}

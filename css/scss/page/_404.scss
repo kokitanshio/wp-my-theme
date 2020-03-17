@@ -1,0 +1,36 @@
+.entry-404{
+  width: 100%;
+  text-align: center;
+  background-color: $backColor;
+  &-title{
+    color: $fontSpan;
+    @include font(80);
+    padding: 30px 0 20px;
+    @include mq(sp){
+      @include font(40);
+    }
+  }
+  &-lead{
+    color: $fontText;
+    @include font(25);
+    margin-bottom: 50px;
+    display: block;
+    font-weight: bold;
+    @include mq(sp){
+      @include font(30);
+    }
+  }
+  &-text{
+    margin-bottom: 20px;
+  }
+}
+.widget-404{
+  width: 50%;
+  margin: 50px auto;
+  @include mq(){
+    width: 100%;
+  }
+}
+.btn-404 a{
+  @include btn($fontSpan, $fontSub);
+}

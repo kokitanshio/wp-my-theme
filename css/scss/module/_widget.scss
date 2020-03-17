@@ -1,0 +1,75 @@
+.widget{
+  margin-bottom: 40px;
+  background-color: $cardColor;
+  @include mq(){
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    @include mq(sp){
+      width: 100%;
+      max-width: 600px;
+    }
+  }
+  &:last-child{
+    margin-bottom: 0;
+  }
+  &-title{
+    background-color: $mainColor;
+    color: $fontSub;
+    font-weight: bold;
+    padding: 15px 10px;
+    @include font(18);
+  }
+  &_search{
+    form{
+      position: relative;
+      .search-field{
+        width: 100%;
+        padding: 20px 45px 20px 10px;
+        @include font(18);
+      }
+      .search-submit{
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        font-size: 20px;
+      }
+    }
+  }
+  &_popular{
+    .wpost-items{
+      margin: 0 10px;
+      padding-bottom: 1px;
+      @include mq(){
+        margin: 0 40px;
+        @include mq(sp){
+          margin: 0;
+        }
+      }
+    }
+  }
+  &_archive{
+    ul{
+      padding: 8px 10px;
+      li{
+        padding: 10px 0;
+        border-bottom: 1px dashed $fontText;
+        @include font(18);
+        @include mq(sp){
+          @include font(16);
+        }
+        &:last-child{
+          border-bottom: none;
+        }
+        a:hover{
+          text-decoration: underline;
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+.sns-twitter{
+  @include sns($twitter);
+}

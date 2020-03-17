@@ -1,0 +1,50 @@
+.entry-tags{
+  padding-top: 30px;
+  border-top: 1px solid $fontText;
+  @include font(14);
+  @include mq(sp){
+    display: flex;
+    @include font(12);
+  }
+}
+
+.entry-tag{
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 20px 0;
+  @include mq(sp){
+    flex-direction: column;
+  }
+}
+
+.entry-tag-head{
+  font-weight: bold;
+  @include mq(sp){
+    margin-bottom: 10px;
+  }
+}
+
+.entry-tag-item{
+  margin: 5px;
+  position: relative;
+  &::before{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-family: "Font Awesome 5 Free";
+    content: "\f02b";
+    font-weight: 900;
+  }
+  a{
+    @include card;
+    padding: 8px 15px;
+    padding-left: 25px;
+    border: 1px solid $backColor;
+    &:hover{
+      background-color: $backColor;
+    }
+  }
+} 

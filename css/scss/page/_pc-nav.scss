@@ -1,0 +1,33 @@
+.header-nav{
+  margin-top: 24px;
+  padding-bottom: 20px;
+  @include mq(sp){
+    display: none;
+  }
+  .header-list{
+    display: flex;
+    justify-content: space-around;
+  }
+  li{
+    position: relative;
+    transition: all 0.5s ease 0s;
+    &::after{
+      display: block;
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: $fontSub;
+      border-radius: 4px;
+      position: absolute;
+      bottom: -8px;
+      opacity: 0;
+      transition: all 0.5s ease 0s;
+    }
+    &:hover{
+      opacity: 0.6;
+    }
+    &:hover::after{
+      opacity: 1;
+    }
+  }
+}

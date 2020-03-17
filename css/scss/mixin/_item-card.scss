@@ -1,0 +1,6 @@
+@mixin card{
+  display: block;
+  background-color: $cardColor;
+  border-radius: 4px;
+  transition: all 0.5s ease 0s;
+}

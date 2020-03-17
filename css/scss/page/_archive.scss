@@ -1,0 +1,22 @@
+.archive-head{
+  position: relative;
+  text-align: center;
+  background-color: $cardColor;
+  padding: 20px 0 40px;
+  border-top: 5px solid $mainColor;
+  margin-bottom: 30px;
+  .archive-title{
+    i{
+      margin-right: 10px;
+    }
+    span{
+      color: $fontSpan;
+    }
+  }
+  .archive-lead{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: $fontSpan;
+  }
+}

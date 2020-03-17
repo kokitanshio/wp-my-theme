@@ -1,0 +1,31 @@
+.pagenation{
+  text-align: center;
+  margin: 50px 0;
+}
+.page-numbers{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $cardColor;
+  color: $mainColor;
+  text-align: center;
+  line-height: 50px;
+  margin: 0 5px;
+  transition: all 0.5s ease 0s;
+  @include mq(sp){
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+  }
+  &:hover{
+    background-color: lighten($mainColor, 30%);
+  }
+}
+.current{
+  background-color: $mainColor;
+  color: $cardColor;
+  &:hover{
+    background-color: $mainColor;
+  }
+}
