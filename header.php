@@ -24,21 +24,37 @@
   <header id="header" class="header">
     <div class="inner">
       <div class="header-inner">
+        <?php if(is_home()||is_front_page()): ?>
+        <h1 class="header-logo">
+          <a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
+        </h1>
+        <?php else: ?>
         <div class="header-logo">
-          <a href=#>たんしおブログ</a>
+        <a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
         </div>
+        <?php endif; ?>
         <div class="header-subtitle">
-          サブタイトルが入りますサブタイトルが入りますサブタイトルが入ります
+          <?php bloginfo('description') ?>
         </div>
       </div>
 
       <!--header-navここから-->
       <nav class="header-nav">
-        <ul class="header-list">
+        <!-- <ul class="header-list">
           <li class="menu-item"><a href="#">カテゴリ名１</a></li>
           <li class="menu-item"><a href="#">カテゴリ名２</a></li>
           <li class="menu-item"><a href="#">カテゴリ名３</a></li>
-        </ul>
+        </ul> -->
+        <?php 
+        wp_nav_menu(
+          array(
+            'menu_class'=>'header-list',
+            'container'=>false,
+            'theme_location'=>'header',
+
+          )
+        );
+        ?>
       </nav>
       <!--header-navここまで-->
 
@@ -49,13 +65,23 @@
           <i id="drawer-close" class="fas fa-chevron-up drawer-close"></i>
         </div>
         <div class="drawer-content">
-          <nav class="drawer-nav">
+          <!-- <nav class="drawer-nav">
             <ul class="drawer-list">
               <li class="drawer-item"><a href="#">カテゴリ名１</a></li>
               <li class="drawer-item"><a href="#">カテゴリ名２</a></li>
               <li class="drawer-item"><a href="#">カテゴリ名３</a></li>
             </ul>
-          </nav>
+          </nav> -->
+          <?php 
+          wp_nav_menu(
+            array(
+              'menu_class'=>'drawer-list',
+              'container'=>'nav',
+              'container_class'=>'drawer-nav',
+              'theme_location'=>'drawer',
+            )
+          ); 
+          ?>
         </div>
       </div>
       <!--drawerここまで-->

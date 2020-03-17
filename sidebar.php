@@ -15,7 +15,7 @@
         <div class="widget-title">プロフィール</div>
         <div class="wprofile">
           <div class="wprofile-img">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/IMG_20200217_174330.jpeg" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/tanshio.jpeg" alt="">
           </div>
           <div class="wprofile-name">たんしお</div>
           <div class="wprofile-content">

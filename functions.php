@@ -55,3 +55,13 @@ function my_styles_scripts(){
   //jsの読み込みここまで
 }
 add_action('wp_enqueue_scripts', 'my_styles_scripts');
+
+//menu作成
+function menu_init(){
+  register_nav_menus(array(
+    'header'=>'ヘッダーメニュー',
+    'drawer'=>'ドロワーメニュー',
+    'footer'=>'フッターメニュー',
+  ));
+}
+add_action('init','menu_init');

@@ -8,7 +8,7 @@
 
         <!--pickpitemここから-->
         <a href="#" class="pickup-item wow fadeIn" data-wow-duration="2s">
-          <div class="pickup-item-img"><img src="<?php echo get_template_directory_uri(); ?>/img/entry1.png" alt=""></div>
+          <div class="pickup-item-img"><img src="<?php echo get_template_directory_uri(); ?>/img/tanshio.jpeg" alt=""></div>
           <div class="pickup-item-text">
             <h2>タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</h2>
           </div>
@@ -16,7 +16,7 @@
         <!--pickpitemここまで-->
         <!--pickpitemここから-->
         <a href="#" class="pickup-item wow fadeIn" data-wow-duration="2s">
-          <div class="pickup-item-img"><img src="<?php echo get_template_directory_uri(); ?>/img/entry1.png" alt=""></div>
+          <div class="pickup-item-img"><img src="<?php echo get_template_directory_uri(); ?>/img/tanshio.jpeg" alt=""></div>
           <div class="pickup-item-text">
             <h2>タイトルタイトルタイトル</h2>
           </div>
@@ -24,7 +24,7 @@
         <!--pickpitemここまで-->
         <!--pickpitemここから-->
         <a href="#" class="pickup-item wow fadeIn" data-wow-duration="2s">
-          <div class="pickup-item-img"><img src="<?php echo get_template_directory_uri(); ?>/img/entry1.png" alt=""></div>
+          <div class="pickup-item-img"><img src="<?php echo get_template_directory_uri(); ?>/img/tanshio.jpeg" alt=""></div>
           <div class="pickup-item-text">
             <h2>タイトルタイトルタイトル</h2>
           </div>
@@ -42,7 +42,7 @@
   
           <!--pickpitemここから-->
           <a href="#" class="swiper-slide">
-            <div class="swiper-slide-img"><img src="<?php echo get_template_directory_uri(); ?>/img/entry1.png" alt=""></div>
+            <div class="swiper-slide-img"><img src="<?php echo get_template_directory_uri(); ?>/img/tanshio.jpeg" alt=""></div>
             <div class="swiper-slide-text">
               <h2>タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</h2>
             </div>
@@ -50,7 +50,7 @@
         <!--pickpitemここまで-->
           <!--pickpitemここから-->
           <a href="#" class="swiper-slide">
-            <div class="swiper-slide-img"><img src="<?php echo get_template_directory_uri(); ?>/img/entry1.png" alt=""></div>
+            <div class="swiper-slide-img"><img src="<?php echo get_template_directory_uri(); ?>/img/tanshio.jpeg" alt=""></div>
             <div class="swiper-slide-text">
               <h2>タイトルタイトルタイトル</h2>
             </div>
@@ -58,7 +58,7 @@
         <!--pickpitemここまで-->
           <!--pickpitemここから-->
           <a href="#" class="swiper-slide">
-            <div class="swiper-slide-img"><img src="<?php echo get_template_directory_uri(); ?>/img/entry1.png" alt=""></div>
+            <div class="swiper-slide-img"><img src="<?php echo get_template_directory_uri(); ?>/img/tanshio.jpeg" alt=""></div>
             <div class="swiper-slide-text">
               <h2>タイトルタイトルタイトル</h2>
             </div>
@@ -117,7 +117,7 @@
                 <i class="fas fa-stopwatch"></i> <?php the_time('Y年n月j日'); ?>
               </time>
             <!--投稿日時を表示終了-->
-            
+
               <h2 class="entry-item-title">
                 <?php the_title(); ?> <!--タイトル表示-->
               </h2>
@@ -133,13 +133,25 @@
       <?php endif; ?>
       <!--ループ終了-->
 
+      <?php if(paginate_links()): ?>
       <div class="pagenation">
-        <a class="prev page-numbers" href="#"><i class="fas fa-arrow-left"></i></a>
+        <?php echo paginate_links(
+          array(
+            
+            'end_size' => 0,
+            'mid_size' => 1,
+            'prev_next' => true,
+            'prev_text' => '<i class="fas fa-arrow-left"></i>',
+            'next_text' => '<i class="fas fa-arrow-right"></i>',
+          )
+        ); ?>
+        <!-- <a class="prev page-numbers" href="#"><i class="fas fa-arrow-left"></i></a>
         <span class="page-numbers current">1</span>
         <a class="page-numbers" href="#">2</a>
         <a class="page-numbers" href="#">3</a>
-        <a class="next page-numbers" href="#"><i class="fas fa-arrow-right"></i></a>
+        <a class="next page-numbers" href="#"><i class="fas fa-arrow-right"></i></a> -->
       </div>
+      <?php endif; ?>
     </main>
     <!--mainここまで-->
 
