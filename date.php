@@ -12,10 +12,8 @@
 
       <!--archive-headここから-->
       <div class="archive-head">
-        <div class="archive-lead">CATEGORY</div>
-        <h1 class="archive-title"><i class="fas fa-tags"></i>
-        <?php the_archive_title();?>
-      </h1>
+        <div class="archive-lead">DATE</div>
+        <h1 class="archive-title"><i class="fas fa-tags"></i><?php the_archive_title(); ?></h1>
       </div>
       <!--archive-headここまで-->
       

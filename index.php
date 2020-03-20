@@ -89,7 +89,7 @@
       <?php the_post(); ?>
 
         <!--entry-itemここから-->
-        <a href="#" class="entry-item wow fadeInUp" data-wow-offset="200">
+        <a href="<?php the_permalink(); ?>" class="entry-item wow fadeInUp" data-wow-offset="200">
 
         <!--カテゴリー名表示処理-->
           <div class="entry-item-tag">

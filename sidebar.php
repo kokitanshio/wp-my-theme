@@ -90,7 +90,7 @@
       <div class="widget widget_archive">
         <div class="widget-title">アーカイブ</div>
         <ul>
-          <li><a href="#">2020年3月</a></li>
+          <li><a href="<?php the_permalink(); ?>">2020年3月</a></li>
           <li><a href="#">2020年2月</a></li>
           <li><a href="#">2020年1月</a></li>
         </ul>
