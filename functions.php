@@ -65,3 +65,35 @@ function menu_init(){
   ));
 }
 add_action('init','menu_init');
+
+//postのカテゴリーを取得する関数
+function my_the_post_category(){
+  $category = get_the_category();
+  if($category[0]){
+    echo $category[0]->cat_name;
+  }
+}
+
+//postのサムネイルを取得する関数
+function my_the_post_thumbnail($noimg = true){
+  if($noimg){ //引数trueならnoimg処理こみ
+    if(has_post_thumbnail()){
+      the_post_thumbnail('large');
+    }else{ //アイキャッチ指定なければnoimg表示
+      echo '<img src="'.esc_url(get_template_directory_uri()).'/img/noimg.png" alt="">';
+    }
+  }else{ //引数falseならnoimg表示なし
+    the_post_thumbnail('large');
+  }
+}
+
+//widgetを有効化
+function my_widget_init(){
+  register_sidebar(
+    array(
+      'name' => 'sidebar',
+      'id' => 'sidebar',
+    )
+  );
+}
+add_action('widgets_init', 'my_widget_init');

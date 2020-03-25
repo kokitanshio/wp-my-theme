@@ -16,13 +16,15 @@
   margin: 20px 0;
   @include mq(sp){
     flex-direction: column;
+    justify-content: start;
+    align-items: start;
   }
 }
 
 .entry-tag-head{
   font-weight: bold;
   @include mq(sp){
-    margin-bottom: 10px;
+    margin: 0 auto 10px;
   }
 }
 

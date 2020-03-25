@@ -2,78 +2,7 @@
 <?php get_header(); ?>
 
   <!--pickupここから-->
-  <div class="pickup">
-    <!--pickup-pcここから-->
-    <div class="pickup-items">
-
-        <!--pickpitemここから-->
-        <a href="#" class="pickup-item wow fadeIn" data-wow-duration="2s">
-          <div class="pickup-item-img"><img src="<?php echo get_template_directory_uri(); ?>/img/tanshio.jpeg" alt=""></div>
-          <div class="pickup-item-text">
-            <h2>タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</h2>
-          </div>
-        </a>
-        <!--pickpitemここまで-->
-        <!--pickpitemここから-->
-        <a href="#" class="pickup-item wow fadeIn" data-wow-duration="2s">
-          <div class="pickup-item-img"><img src="<?php echo get_template_directory_uri(); ?>/img/tanshio.jpeg" alt=""></div>
-          <div class="pickup-item-text">
-            <h2>タイトルタイトルタイトル</h2>
-          </div>
-        </a>
-        <!--pickpitemここまで-->
-        <!--pickpitemここから-->
-        <a href="#" class="pickup-item wow fadeIn" data-wow-duration="2s">
-          <div class="pickup-item-img"><img src="<?php echo get_template_directory_uri(); ?>/img/tanshio.jpeg" alt=""></div>
-          <div class="pickup-item-text">
-            <h2>タイトルタイトルタイトル</h2>
-          </div>
-        </a>
-        <!--pickpitemここまで-->
-
-    </div>
-    <!--pickup-itemsここまで--><!--pickup-pcここまで-->
-    
-    <!--pickup-spここから-->
-    <div class="pickup-sp wow fadeIn" data-wow-duration="2s">
-      <!--swiperここから-->
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-  
-          <!--pickpitemここから-->
-          <a href="#" class="swiper-slide">
-            <div class="swiper-slide-img"><img src="<?php echo get_template_directory_uri(); ?>/img/tanshio.jpeg" alt=""></div>
-            <div class="swiper-slide-text">
-              <h2>タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</h2>
-            </div>
-          </a>
-        <!--pickpitemここまで-->
-          <!--pickpitemここから-->
-          <a href="#" class="swiper-slide">
-            <div class="swiper-slide-img"><img src="<?php echo get_template_directory_uri(); ?>/img/tanshio.jpeg" alt=""></div>
-            <div class="swiper-slide-text">
-              <h2>タイトルタイトルタイトル</h2>
-            </div>
-          </a>
-        <!--pickpitemここまで-->
-          <!--pickpitemここから-->
-          <a href="#" class="swiper-slide">
-            <div class="swiper-slide-img"><img src="<?php echo get_template_directory_uri(); ?>/img/tanshio.jpeg" alt=""></div>
-            <div class="swiper-slide-text">
-              <h2>タイトルタイトルタイトル</h2>
-            </div>
-          </a>
-        <!--pickpitemここまで-->
-        </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
-      <div class="swiper-pagination"></div>
-      <!--swiperここまで-->
-    </div>
-    <!--pickup-spここまで-->
-
-  </div>
+  <?php get_template_part('template_parts/pickup_tag'); ?>
   <!--pickupここまで-->
 
   <!--contentここから-->
@@ -93,21 +22,15 @@
 
         <!--カテゴリー名表示処理-->
           <div class="entry-item-tag">
-          <?php $category = get_the_category();
-          if($category[0]){
-            echo $category[0]->cat_name;
-          }
-          ?>
+          <?php my_the_post_category(); ?>
           </div>
         <!--カテゴリー名表示処理終了-->
 
             <!--アイキャッチ画像表示処理-->
             <div class="entry-item-img">
-            <?php if(has_post_thumbnail()){
-              the_post_thumbnail('large');
-            }else{ //アイキャッチ指定なければnoimg表示
-              echo '<img src="'.esc_url(get_template_directory_uri()).'/img/noimg.png" alt="">';
-            } ?>
+            <?php 
+            my_the_post_thumbnail(true);
+            ?>
             </div>
             <!--アイキャッチ画像表示処理終了-->
 
@@ -133,25 +56,10 @@
       <?php endif; ?>
       <!--ループ終了-->
 
-      <?php if(paginate_links()): ?>
-      <div class="pagenation">
-        <?php echo paginate_links(
-          array(
-            
-            'end_size' => 0,
-            'mid_size' => 1,
-            'prev_next' => true,
-            'prev_text' => '<i class="fas fa-arrow-left"></i>',
-            'next_text' => '<i class="fas fa-arrow-right"></i>',
-          )
-        ); ?>
-        <!-- <a class="prev page-numbers" href="#"><i class="fas fa-arrow-left"></i></a>
-        <span class="page-numbers current">1</span>
-        <a class="page-numbers" href="#">2</a>
-        <a class="page-numbers" href="#">3</a>
-        <a class="next page-numbers" href="#"><i class="fas fa-arrow-right"></i></a> -->
-      </div>
-      <?php endif; ?>
+      <!--ページネーションの読み込み-->
+      <?php get_template_part('template_parts/pagination'); ?>
+      <!--ページネーションの読み込み-->
+
     </main>
     <!--mainここまで-->
 

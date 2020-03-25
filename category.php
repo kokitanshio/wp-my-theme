@@ -29,21 +29,14 @@
         <a href="<?php the_permalink(); ?>" class="entry-item wow fadeInUp" data-wow-offset="200">
 
         <!--カテゴリー名表示処理-->
-          <?php $category = get_the_category();
-          if($category[0]):?>
-          <div class="entry-item-tag"><?php echo $category[0]->cat_name; //最初のカテゴリー名を表示 ?></div>
-          <?php endif; ?>
+          <div class="entry-item-tag"><?php my_the_post_category(); ?></div>
         <!--カテゴリー名表示処理終了-->
 
           <!--アイキャッチ画像表示処理-->
           <div class="entry-item-img">
-              <?php if(has_post_thumbnail()):?>
-                <?php the_post_thumbnail('large'); //アイキャッチ設定されていたらlargeで表示 ?>
-              <?php else: ?>
-              <img src="<?php echo esc_url(get_template_directory_uri()); //設定されてない場合noimg画像表示 ?>/img/noimg.png" alt="">
-              <?php endif; ?>
-            </div>
-            <!--アイキャッチ画像表示処理終了-->
+            <?php my_the_post_thumbnail(true); ?>
+          </div>
+          <!--アイキャッチ画像表示処理終了-->
             
             <div class="entry-item-body">
               <!--投稿時間を動的に-->
@@ -67,21 +60,8 @@
       <?php endif; ?>
 
       <!--paginate開始-->
-      <?php if(paginate_links()): ?>
-      <div class="pagenation">
-        <?php echo paginate_links(
-          array(
-            
-            'end_size' => 0,
-            'mid_size' => 1,
-            'prev_next' => true,
-            'prev_text' => '<i class="fas fa-arrow-left"></i>',
-            'next_text' => '<i class="fas fa-arrow-right"></i>',
-          )
-        ); ?>
-      </div>
-      <?php endif; ?>
-      <!--paginate開始-->
+      <?php get_template_part('template_parts/pagination'); ?>
+      <!--paginate終了-->
 
     </main>
     <!--mainここまで-->

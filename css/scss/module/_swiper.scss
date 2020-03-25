@@ -32,7 +32,8 @@
   border-radius: 50%;
 }
 .swiper-pagination{
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   margin-top: 10px;
   &-bullet{
     width: 12px;

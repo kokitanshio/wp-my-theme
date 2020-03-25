@@ -29,7 +29,7 @@
           </ul>
         </div> 
       </div>
-      <!--プロフィールここから-->
+      <!--プロフィールここまで-->
       <!--Twitterここから-->
       <div class="widget widget_twitter">
         <div class="widget-title">Twitter</div>
