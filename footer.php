@@ -3,7 +3,7 @@
   <footer>
     <div class="footer-menu inner">
       <div class="footer-logo">
-        <a href="#">たんしおブログ</a>
+        <a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
       </div>
 
       <!--to-topここから-->
@@ -32,7 +32,7 @@
       ?>
       <!--footer-navここまで-->
       <div class="copy">
-        Copyright2020 <a href="#">たんしおブログ</a> All rights reserved
+        Copyright2020 <a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a> All rights reserved
       </div>
     </div>
 

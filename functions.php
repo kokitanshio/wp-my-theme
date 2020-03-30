@@ -93,7 +93,62 @@ function my_widget_init(){
     array(
       'name' => 'sidebar',
       'id' => 'sidebar',
+      'before_widget' => '<div id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</div>',
     )
   );
 }
 add_action('widgets_init', 'my_widget_init');
+
+//archive_titleの前の文字を削除する
+function my_archive_title($title){
+  if(is_category()){
+    $title = single_cat_title('', true);
+  }elseif(is_tag()){
+    $title = single_tag_title('', false);
+  }elseif(is_date()){
+    if(get_query_var('monthnum')){
+      $title = get_the_time('Y年n月');
+    }elseif(get_query_var('year')){
+      $title = get_the_time('Y年');
+    }
+  }
+  return $title;
+}
+add_filter('get_the_archive_title', 'my_archive_title');
+
+
+//アクセス数を取得する関数
+
+function get_post_views(){
+  global $post;
+  $count = 0;
+  $count_key = 'view_counter';
+
+  if($post){
+    $id = $post->ID;
+    $count = get_post_meta($id, $count_key, true);
+  }
+
+  if($count === ''){
+    delete_post_meta($id, $count_key);
+    add_post_meta($id, $count_key, '1');
+  }elseif($count > 0){
+    if(!is_user_logged_in()){
+      $count++;
+      update_post_meta($id, $count_key, $count);
+    }
+  }
+}
+add_action('template_redirect', 'set_post_views', 10);
+
+//固定ページを検索結果から除外する
+
+function my_posts_search($search, $query){
+  if($query->is_search() && $query->is_main_query() && !is_admin()){
+    $search .= "AND post_type = 'post'";
+    return $search;
+  }
+  return $search;
+}
+add_filter('posts_search', 'my_posts_search', 10, 2);

@@ -2,8 +2,8 @@
       <!--検索ここから-->
       <div class="widget widget_search">
         <div class="widget-title">検索</div>
-        <form action="get" class="search-form" action="#">
-          <input type="search" name="s" id="s" class="search-field" placeholder="キーワード">
+        <form method="get" class="search-form" action="<?php echo esc_url(home_url('/')); ?>">
+          <input type="search" name="s" id="s" class="search-field" placeholder="キーワード" value="<?php the_search_query(); ?>">
           <button type="submit" class="search-submit">
             <i class="fas fa-search"></i>
           </button>
@@ -21,11 +21,11 @@
           <div class="wprofile-content">
             テキストテキストテキストテキストテキストテキストテキスト
           </div>
-          <a class="wprofile-link" href="#">
+          <a class="wprofile-link" href="<?php echo get_permalink(31); ?>">
             プロフィールはこちら
           </a>
           <ul class="wprofile-sns">
-            <li class="sns-twitter"><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li class="sns-twitter"><a href="https://twitter.com/tanshiokoki73" target="_blank"><i class="fab fa-twitter"></i></a></li>
           </ul>
         </div> 
       </div>
@@ -42,47 +42,25 @@
         <div class="widget-title">人気記事</div>
         <div class="wpost-items">
 
-          <!--wpost-itemここから-->
-          <a href="#" class="wpost-item">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/entry1.png" alt="">
-            <div class="wpost-item-title">
-              タイトルタイトルタイトルタイトルタイトルタイトルタイトル
-            </div>
-          </a>
-          <!--wpost-itemここまで-->
-          <!--wpost-itemここから-->
-          <a href="#" class="wpost-item">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/entry1.png" alt="">
-            <div class="wpost-item-title">
-              タイトルタイトルタイトルタイトルタイトルタイトルタイトル
-            </div>
-          </a>
-          <!--wpost-itemここまで-->
-          <!--wpost-itemここから-->
-          <a href="#" class="wpost-item">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/entry1.png" alt="">
-            <div class="wpost-item-title">
-              タイトルタイトルタイトルタイトルタイトルタイトルタイトル
-            </div>
-          </a>
-          <!--wpost-itemここまで-->
-          <!--wpost-itemここから-->
-          <a href="#" class="wpost-item">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/entry1.png" alt="">
-            <div class="wpost-item-title">
-              タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル
-            </div>
-          </a>
-          <!--wpost-itemここまで-->
-          <!--wpost-itemここから-->
-          <a href="#" class="wpost-item">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/entry1.png" alt="">
-            <div class="wpost-item-title">
-              タイトルタイトルタイトルタイトルタイトルタイトルタイトル
-            </div>
-          </a>
-          <!--wpost-itemここまで-->
+          <?php $popular_posts = get_posts(array(
+            'post_type' => 'post',
+            'posts_per_page' => '5',
+            'order' => 'DESC',
+            'meta_key' => 'viwe_counter',
+            'orderby' => 'meta_value_num',
+          ));
+          foreach($popular_posts as $post): setup_postdata($post); ?>
 
+          <!--wpost-itemここから-->
+          <a href="<?php the_permalink(); ?>" class="wpost-item">
+            <?php my_the_post_thumbnail(true); ?>
+            <div class="wpost-item-title">
+              <?php the_title(); ?>
+            </div>
+          </a>
+          <!--wpost-itemここまで-->
+          <?php endforeach; wp_reset_postdata(); ?>
+<?php echo $count; ?>
         </div>
       </div>
       <!--人気記事ここまで-->
@@ -90,9 +68,11 @@
       <div class="widget widget_archive">
         <div class="widget-title">アーカイブ</div>
         <ul>
-          <li><a href="<?php the_permalink(); ?>">2020年3月</a></li>
-          <li><a href="#">2020年2月</a></li>
-          <li><a href="#">2020年1月</a></li>
+        <?php wp_get_archives(array(
+          'type' => 'monthly',
+          'format' => 'html',
+          'orderby' => 'ASC',
+        )); ?>
         </ul>
       </div>
       <!--アーカイブここまで-->
