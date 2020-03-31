@@ -44,9 +44,9 @@
 
           <?php $popular_posts = get_posts(array(
             'post_type' => 'post',
-            'posts_per_page' => '5',
+            'posts_per_page' => 5,
             'order' => 'DESC',
-            'meta_key' => 'viwe_counter',
+            'meta_key' => 'view_counter',
             'orderby' => 'meta_value_num',
           ));
           foreach($popular_posts as $post): setup_postdata($post); ?>

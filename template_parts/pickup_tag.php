@@ -57,8 +57,6 @@ $pickup_post = get_posts(array(
         <?php endforeach;
         wp_reset_postdata(); ?>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
       </div>
       <div class="swiper-pagination"></div>
       <!--swiperここまで-->

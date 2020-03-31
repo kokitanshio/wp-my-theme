@@ -5,12 +5,6 @@
     <!--mainここから-->
     <main id="main" class="main">
 
-      <!--パンクズここから-->
-      <div class="breadcrumb">
-      <?php bcn_display(); ?>
-      </div>
-      <!--パンクズここまで-->
-
       <?php if(have_posts()): ?>
       <?php while(have_posts()): the_post(); ?>
       <!--entryここから-->

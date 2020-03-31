@@ -4,12 +4,6 @@
     <!--mainここから-->
     <main id="main" class="main">
 
-      <!--パンクズここから-->
-      <div class="breadcrumb">
-      <?php bcn_display(); ?>
-      </div>
-      <!--パンクズここまで-->
-
       <!--archive-headここから-->
       <div class="archive-head">
         <div class="archive-lead">SEARCH</div>

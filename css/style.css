@@ -888,6 +888,14 @@ body {
   transition: all 0.5s ease 0s;
 }
 
+.at-share-btn-elements {
+  text-align: center;
+}
+
+#toc_container {
+  margin: 40px auto;
+}
+
 .header {
   background-color: #bf783e;
   color: #fff;
