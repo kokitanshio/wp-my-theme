@@ -168,3 +168,7 @@ function my_posts_search($search, $query){
   return $search;
 }
 add_filter('posts_search', 'my_posts_search', 10, 2);
+
+//MySQL データベース名 tanshiochan_wp1
+//MySQL ユーザー名     tanshiochan_wp1
+//MySQL パスワード     x1q74f19vn
